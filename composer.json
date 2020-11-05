@@ -1,0 +1,6 @@
+{
+    "require": {
+        "laravel/installer": "^4.0",
+        "league/fractal": "^0.19.2"
+    }
+}

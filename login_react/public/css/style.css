@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    height: 100%;
+}
+
+#form{
+    height: 300px;
+    width: 600px;
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .5);
+
+}
+
+form{
+    width: 300px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,300&display=swap');
+.header h2{
+    margin: 50px 0 10px 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #495464;
+}
+
+.fill label{
+    width: 100%;
+    height: 50px;
+    display: block;
+    position: relative;
+}
+
+.fill label span{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    position: absolute;
+    top:20px;
+    transition: .8s;
+    opacity: 0;
+    cursor: auto;
+}
+
+.fill label input{
+    width: 100%;
+    margin-left: 30px;
+    float: right;
+    margin: 15px 0;
+
+    padding: 5px 0;
+    border: none;
+    border-bottom: 1px solid #8bcdcd;
+    transition: .5s;
+}
+
+.fill label input::placeholder{
+    font-size: 15px;
+}
+
+.fill label input:focus{
+    outline: none;
+}
+
+.fill label input:focus::placeholder{
+    transition: .5s;
+    opacity: 0;
+}
+
+.fill label input:focus ~ span{
+    /* left: -4px; */
+    top: 0;
+    opacity: 1;
+}
+
+.fill input[type=submit]{
+    height: 33px;
+    width: 100%;
+    padding: 3px;
+    margin-top: 20px;
+    color: #495464;
+    border: 1px solid #8bcdcd;
+    border-radius: 20px;
+    background-color: white;
+
+    font-size: 16px;
+    transition: .5s;
+}
+
+.fill input[type=submit]:hover{
+    background-color: #8bcdcd;
+    color: white;
+}
+
+.fill input[type=submit]:active{
+    outline: none;
+    
+}
+
+.img{
+    width: 25px;
+    height: 25px;
+}
+
+.fill label img{
+    position: absolute;
+    right: -25px;
+    bottom: 0;
+    z-index: 3;
+}
