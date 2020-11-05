@@ -17,7 +17,6 @@ class PostController extends Controller
     public function add(StorePostPost $request, Post $post)
     {
         $validate = (object) $request->validated();
-        // dd(Auth::user()->id);
         $user = $post::create([
             'user_id' => Auth::user()->id,
             'content' => $validate->content,
@@ -31,15 +30,7 @@ class PostController extends Controller
     public function update(StorePostPost $request, Post $post)
     {
 
-        // $this->authorize('update', $post); authorize dengan PostPolicy
-        // $post->content = $request->get('content', $post->content);
-        // $post->save();
-        // $response = fractal()->item($post)->transformWith(new PostTransformer)->toArray();
-        // return response()->json($response, 201);
 
-        // 
-
-        // Gate::authorize('update-post', $post); call fungsi update-post dari Class AuthServiceProvider
         if (Gate::allows('post', $post)) {
             $post->content = $request->get('content', $post->content);
             $post->save();
@@ -52,9 +43,6 @@ class PostController extends Controller
 
     public function delete(Request $request, Post $post)
     {
-        //     dd($request->url());
-        // $response = Http::delete($request->url());
-        // return $response->status();
         if ($request->isMethod('delete')) {
             // Check is user can delete the post
             $response = Gate::inspect('update', $post);
